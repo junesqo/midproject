@@ -1,3 +1,5 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
 <head>
     <meta charset="utf-8">
@@ -28,15 +30,10 @@
             </form>
         </div>
     </nav>
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-        <img src="../static/image/alatoo.png" width="60" height="60" class="d-inline-block align-text-center">
-        <span class="fs-4">IAAU O.D</span>
-    </a>
-<!--    <img src="../static/image/alatoo.png">-->
     <h1>This is a midterm project</h1>
     <h4>I hope the application is okay to get "okay" grade</h4>
     <br>
+    <img src="">
 </header>
     <body>
         <div>
@@ -52,14 +49,18 @@
         <br>
 
         <br>
-        {{#messages}}
-            <div>
-                <ul>
-                    <li><b><h6>{{id}}</h6></b></li>
-                    <li><span><h6>{{text}}</h6></span></li>
-                </ul>
-            <i><h6>{{tag}}</h6></i>
-            </div>
-        {{/messages}}
+<!--        {{#messages}}-->
+        <div th:each="el : ${messages}" class="alert alert-info mt-3">
+            <h6 class="mb-0" th:text="${el.id}"/>
+            <span class="mb-0" th:text="${el.text}"/>
+            <p class="mb-0 opacity-75" th:text="${el.tag}"/>
+        </div>
+<!--            <div>-->
+<!--                    <b>{{id}}</b>-->
+<!--                    <span>{{text}}</span>-->
+
+<!--            <i>{{tag}}</i>-->
+<!--            </div>-->
+<!--        {{/messages}}-->
     </body>
 </html>
