@@ -1,4 +1,13 @@
 <html>
+<head>
+    <title>Ala-Too</title>
+</head>
+<header>
+    <img src="../static/image/logo.png" alt="alatoo-logo" width="60" height="60">
+    <h1>This is a midterm project</h1>
+    <h4>I hope the application is okay to get "okay" grade</h4>
+    <br>
+</header>
     <body>
         <div>
             <form method="post">
@@ -7,11 +16,14 @@
                 <button type="submit">Добавить</button>
             </form>
         </div>
+        <br>
         <div>Список записей</div>
+        <br>
         <form method="post" action="filter">
             <input type="text" name="filter">
             <button type="submit">Найти</button>
         </form>
+        <br>
         {{#messages}}
             <div>
             <b>{{id}}</b>
