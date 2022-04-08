@@ -6,10 +6,7 @@
     <title>Ala-Too</title>
 </head>
 <header>
-    <img src="../static/image/alatoo.png" alt="alatoo-logo" width="60" height="60">
-    <h1>This is a midterm project</h1>
-    <h4>I hope the application is okay to get "okay" grade</h4>
-    <br>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,54 +16,42 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link" href="/greeting">Hello</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <form method="post" action="filter" class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" name="filter" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
     </nav>
+    <img src="../static/image/alatoo.png" alt="alatoo-logo" width="60" height="60">
+    <h1>This is a midterm project</h1>
+    <h4>I hope the application is okay to get "okay" grade</h4>
+    <br>
 </header>
     <body>
         <div>
-            <form method="post">
-                <input type="text" name="text" placeholder="Введите текст записи"/>
-                <input type="text" name="tag" placeholder="Тег"/>
-                <button type="submit">Добавить</button>
+
+            <form method="post" class="form-inline my-2 my-lg-0">
+                <input type="text" name="text" class="form-control mr-sm-2" placeholder="Введите текст записи"/>
+                <input type="text" name="tag" class="form-control mr-sm-2" placeholder="Тег"/>
+                <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Добавить</button>
             </form>
         </div>
         <br>
-        <div>Список записей</div>
+        <div><h4>Список записей</h4></div>
         <br>
-        <form method="post" action="filter">
-            <input type="text" name="filter">
-            <button type="submit">Найти</button>
-        </form>
+
         <br>
         {{#messages}}
             <div>
-            <b>{{id}}</b>
-            <span>{{text}}</span>
-            <i>{{tag}}</i>
+            <b><h6>{{id}}</h6></b>
+            <span><h6>{{text}}</h6></span>
+            <i><h6>{{tag}}</h6></i>
             </div>
         {{/messages}}
     </body>
